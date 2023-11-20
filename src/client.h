@@ -1,6 +1,6 @@
 #include "chttpd.h"
 #pragma once
 
-Config conf = {};
+Config conf;
 
 void c_config_parse();
