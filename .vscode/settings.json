@@ -1,6 +1,11 @@
 {
   "files.associations": {
     "ifaddrs.h": "c",
-    "socket.h": "c"
+    "socket.h": "c",
+    "types.h": "c",
+    "client.h": "c",
+    "chttpd.h": "c",
+    "unistd.h": "c",
+    "stdio.h": "c"
   }
 }

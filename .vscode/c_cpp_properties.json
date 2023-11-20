@@ -3,7 +3,7 @@
     {
       "name": "arm",
       "includePath": [
-        "D:\\study\\linux_environment\\linux-5.0\\include",
+        // "D:\\study\\linux_environment\\linux-5.0\\include",
         "D:\\study\\linux_environment\\openwrt\\include"
       ],
       "defines": ["_DEBUG", "UNICODE", "_UNICODE"],
