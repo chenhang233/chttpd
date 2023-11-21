@@ -1,6 +1,8 @@
 {
   "files.associations": {
     "ifaddrs.h": "c",
-    "socket.h": "c"
+    "socket.h": "c",
+    "pthread.h": "c",
+    "sqlite3.h": "c"
   }
 }
