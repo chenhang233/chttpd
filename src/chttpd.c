@@ -1,4 +1,5 @@
 #include "client.h"
+#include "chttpd.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <fcntl.h>

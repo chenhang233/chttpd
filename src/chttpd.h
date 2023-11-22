@@ -14,4 +14,5 @@ typedef struct config
     bool log_on;
     bool fork_on;
     struct log_config log_config;
+    char *file;
 } Config;

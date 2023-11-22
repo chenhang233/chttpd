@@ -3,6 +3,14 @@
     "ifaddrs.h": "c",
     "socket.h": "c",
     "pthread.h": "c",
-    "sqlite3.h": "c"
+    "sqlite3.h": "c",
+    "client.h": "c",
+    "stdio.h": "c",
+    "fcntl.h": "c",
+    "unistd.h": "c",
+    "chttpd.h": "c",
+    "stddef.h": "c",
+    "stdbool.h": "c",
+    "stat.h": "c"
   }
 }
