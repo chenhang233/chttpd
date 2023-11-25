@@ -4,7 +4,8 @@
             "name": "Linux",
             "includePath": [
                 "${default}",
-                "/usr/include/libnl3"
+                "/usr/include/libnm",
+                "/usr/include/glib-2.0"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",

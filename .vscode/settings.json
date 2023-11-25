@@ -6,6 +6,12 @@
         "netlink.h": "c",
         "socket.h": "c",
         "module.h": "c",
-        "attr.h": "c"
+        "attr.h": "c",
+        "nm-device.h": "c",
+        "networkmanager.h": "c",
+        "nm-client.h": "c",
+        "glib.h": "c",
+        "gtypes.h": "c",
+        "gfileutils.h": "c"
     }
 }
