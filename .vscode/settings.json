@@ -1,16 +1,11 @@
 {
-  "files.associations": {
-    "ifaddrs.h": "c",
-    "socket.h": "c",
-    "pthread.h": "c",
-    "sqlite3.h": "c",
-    "client.h": "c",
-    "stdio.h": "c",
-    "fcntl.h": "c",
-    "unistd.h": "c",
-    "chttpd.h": "c",
-    "stddef.h": "c",
-    "stdbool.h": "c",
-    "stat.h": "c"
-  }
+    "files.associations": {
+        "stdlib.h": "c",
+        "stdio.h": "c",
+        "ctrl.h": "c",
+        "netlink.h": "c",
+        "socket.h": "c",
+        "module.h": "c",
+        "attr.h": "c"
+    }
 }
