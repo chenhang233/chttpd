@@ -13,7 +13,7 @@ test4:
 # gcc 链接库 前一个依赖后一个
 test5:  
 	gcc -c  -I /usr/include/libnm  -I /usr/include/glib-2.0 -I /usr/lib/aarch64-linux-gnu/glib-2.0/include  05.wifi.c -o test.o 
-	gcc test.o -L /usr/lib/aarch64-linux-gnu/ -lnm -lglib-2.0 -o test
+	gcc test.o -L /usr/lib/aarch64-linux-gnu/ -lnm -lglib-2.0 -lgobject-2.0 -o test
 
 
 
