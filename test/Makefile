@@ -15,6 +15,11 @@ test5:
 	gcc -c  -I /usr/include/libnm  -I /usr/include/glib-2.0 -I /usr/lib/aarch64-linux-gnu/glib-2.0/include  05.wifi.c -o test.o 
 	gcc test.o -L /usr/lib/aarch64-linux-gnu/ -lnm -lglib-2.0 -lgobject-2.0 -o test
 
+test6:  
+	gcc -c  -I /usr/include/libnm  -I /usr/include/glib-2.0 -I /usr/lib/aarch64-linux-gnu/glib-2.0/include  06.wifi_ap_info.c -o test.o 
+	gcc test.o -L /usr/lib/aarch64-linux-gnu/ -lnm -lglib-2.0 -lgobject-2.0 -o test
+
+
 
 
 
