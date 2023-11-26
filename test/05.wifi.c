@@ -25,6 +25,7 @@ int main(int argc, char *argv[])
             // 打印WiFi网卡信息
             printf("当前WiFi网卡：%s\n", nm_device_get_iface(device));
             printf("当前WiFi driver：%s\n", nm_device_get_driver(device));
+            printf("当前WiFi software %d\n", nm_device_is_software(device));
 
             break;
         }

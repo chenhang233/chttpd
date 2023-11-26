@@ -1,37 +1,51 @@
-#include <NetworkManager.h>
 #include <stdio.h>
-#include <libnm_glib.h>
+#include <NetworkManager.h>
 
 int main()
 {
-    NMClient *client;
-    NMAccessPoint *ap;
+    NMDeviceWifi *wifi;
     const GPtrArray *aps;
     int i;
+    NMAccessPoint *ap;
+    char ssid[16];
+    const char *bssid;
+    guint8 strength;
 
-    // 创建NMClient实例
-    client = nm_client_new(NULL, NULL);
+    // 获取WiFi设备列表
+    const GPtrArray *devices = nm_client_get_devices(nm_client_new(NULL, NULL));
 
-    // 获取当前已连接的WiFi设备列表
-    aps = nm_client_get_access_points(client);
-    nm_client_get_all_devices
-        // 遍历设备列表，查找已连接的WiFi AP设备
-        for (i = 0; i < aps->len; i++)
+    // 遍历设备列表，找到已开启的WiFi热点设备
+    for (i = 0; i < devices->len; i++)
     {
-        ap = g_ptr_array_index(aps, i);
-        if (nm_ap_get_strength(ap) > 0)
+        NMDevice *device = g_ptr_array_index(devices, i);
+        if (nm_device_get_device_type(device) == NM_DEVICE_TYPE_WIFI && nm_device_get_state(device) == NM_DEVICE_STATE_ACTIVATED)
         {
-            // 打印已连接的WiFi AP设备信息
-            printf("已连接的WiFi AP：\n");
-            printf("SSID：%s\n", nm_ap_get_ssid(ap));
-            printf("BSSID：%s\n", nm_ap_get_bssid(ap));
-            printf("信号强度：%d\n", nm_ap_get_strength(ap));
+            wifi = NM_DEVICE_WIFI(device);
             break;
         }
     }
 
-    // 释放资源
-    g_object_unref(client);
+    if (!wifi)
+    {
+        printf("未找到已开启的WiFi热点设备\n");
+        return 1;
+    }
+
+    // 获取接入点列表
+    aps = nm_device_wifi_get_access_points(wifi);
+
+    for (i = 0; i < aps->len; i++)
+    {
+        ap = g_ptr_array_index(aps, i);
+        GByteArray *arr = g_bytes_unref_to_array(nm_access_point_get_ssid(ap));
+        memcpy(ssid, arr->data, arr->len);
+
+        bssid = nm_access_point_get_bssid(ap);
+        strength = nm_access_point_get_strength(ap);
+        printf("SSID: %s\n", ssid);         // 打印SSID（可选）
+        printf("BSSID: %s\n", bssid);       // 打印MAC地址
+        printf("信号强度: %d\n", strength); // 打印信号强度（可选）
+    }
 
     return 0;
 }
