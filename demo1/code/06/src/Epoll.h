@@ -2,7 +2,9 @@
 #include "util.h"
 #include <strings.h>
 #include <vector>
+#include "Channel.h"
 
+class Channel;
 class Epoll
 {
 private:
@@ -13,5 +15,6 @@ public:
     Epoll();
     ~Epoll();
     void addFd(int fd, uint32_t op);
-    std::vector<struct epoll_event> poll(int timeout = -1);
+    std::vector<Channel *> poll(int timeout = -1);
+    void updateChannel(Channel *);
 };
